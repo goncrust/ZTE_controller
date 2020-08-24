@@ -40,7 +40,7 @@ class ZTE_controller:
 
         while self.running:
 
-            print("\nPrint help for a list of commands")
+            print("\nType help for a list of commands")
             command = input("> ")
             print("")
 
@@ -51,10 +51,13 @@ class ZTE_controller:
 
         # shutdown rooter
         if command == "shutdown":
-            self.cmds.shutdown(False)
+            self.cmds.shutdown(False, False)
 
-        elif command == "shutdown -s":
-            self.cmds.shutdown(True)
+        elif command == "shutdown -sT":
+            self.cmds.shutdown(True, False)
+
+        elif command == "shutdown -sD":
+            self.cmds.shutdown(True, True)
 
         # help page
         elif command == "help":
