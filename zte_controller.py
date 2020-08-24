@@ -63,6 +63,10 @@ class ZTE_controller:
         elif command == "help":
             self.cmds.help()
 
+        # quit
+        elif command == "quit":
+            self.running = False
+
         # defualt
         else:
             self.cmds.help()

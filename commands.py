@@ -57,4 +57,4 @@ class Commands:
         self.print_help()
 
     def print_help(self):
-        print("Commands:\n shutdown - turns off router (can take arguments: -sT (schedule with timer) -sD (schedule with date))\n help - prits this page")
+        print("Commands:\n shutdown - turns off router (can take arguments: -sT (schedule with timer) -sD (schedule with date))\n help - prits this page\n quit - close program")
