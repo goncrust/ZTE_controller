@@ -46,6 +46,8 @@ class ZTE_controller:
 
             self.command(command)
 
+        self.browser.close()
+
     # Process command
     def command(self, command):
 
