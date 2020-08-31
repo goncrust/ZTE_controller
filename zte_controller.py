@@ -61,6 +61,10 @@ class ZTE_controller:
         elif command == "shutdown -sD":
             self.cmds.shutdown(True, True)
 
+        # stats
+        elif command == "stats":
+            self.cmds.stats()
+
         # help page
         elif command == "help":
             self.cmds.help()

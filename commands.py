@@ -53,8 +53,15 @@ class Commands:
 
         print("Shutdown completed.")
 
+    def stats(self):
+        pass
+
     def help(self):
         self.print_help()
 
     def print_help(self):
-        print("Commands:\n shutdown - turns off router (can take arguments: -sT (schedule with timer) -sD (schedule with date))\n help - prits this page\n quit - close program")
+        print("Commands:")
+        print(" stats - show current router statistics")
+        print(" shutdown - turns off router (can take arguments: -sT (schedule with timer) -sD (schedule with date))")
+        print(" help - prits this page")
+        print(" quit - close program")
