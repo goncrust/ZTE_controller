@@ -5,8 +5,9 @@ import calendar
 
 class Commands:
 
-    def __init__(self, browser):
+    def __init__(self, browser, ip):
         self.browser = browser
+        self.ip = ip
 
     def shutdown(self, schedule, date):
 
@@ -53,8 +54,10 @@ class Commands:
 
         print("Shutdown completed.")
 
+        return True
+
     def stats(self):
-        pass
+        self.start_page()
 
     def help(self):
         self.print_help()
@@ -65,3 +68,6 @@ class Commands:
         print(" shutdown - turns off router (can take arguments: -sT (schedule with timer) -sD (schedule with date))")
         print(" help - prits this page")
         print(" quit - close program")
+
+    def start_page(self):
+        self.browser.get(self.ip)

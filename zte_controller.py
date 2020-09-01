@@ -29,7 +29,7 @@ class ZTE_controller:
         button.click()
 
         # Commands class
-        self.cmds = Commands(self.browser)
+        self.cmds = Commands(self.browser, self.ip)
 
         # Enter main loop
         self.main_loop()
@@ -51,15 +51,16 @@ class ZTE_controller:
     # Process command
     def command(self, command):
 
+        result_s = False
         # shutdown rooter
         if command == "shutdown":
-            self.cmds.shutdown(False, False)
+            result_s = self.cmds.shutdown(False, False)
 
         elif command == "shutdown -sT":
-            self.cmds.shutdown(True, False)
+            result_s = self.cmds.shutdown(True, False)
 
         elif command == "shutdown -sD":
-            self.cmds.shutdown(True, True)
+            result_s = self.cmds.shutdown(True, True)
 
         # stats
         elif command == "stats":
@@ -76,6 +77,9 @@ class ZTE_controller:
         # defualt
         else:
             self.cmds.help()
+
+        if result_s:
+            self.running = False
 
 
 controller = ZTE_controller()
